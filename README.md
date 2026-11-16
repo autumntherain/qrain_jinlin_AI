@@ -1,8 +1,13 @@
 # qrain_jinlin_AI
 > Classic deep‑learning papers reproduction & improvement project
 
-本项目复现并改良六篇深度学习经典论文：
+本项目参考六篇AI论文：
 AlexNet、Transformer、BERT、Adam、DQN、RLVR。
+
+## 本项目（qrain_jinlin_AI）的目的有
+- 打破国外人工智能AI壁垒
+- 增加中国国产AI数量与质量
+- 将代码开源，展示AI技术
 
 > ⚠️ 本仓库不含任何图片素材，原因与依据见 [ASSETS_POLICY.md](./ASSETS_POLICY.md)。
 > 论文文档不含原版图表，请查阅 [docs/论文中无插图通告.md](./docs/论文中无插图通告.md)；原图请跳转各论文官方页面。
