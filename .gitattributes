@@ -1,0 +1,7 @@
+*.md text
+*.py text
+*.cpp text
+*.h text
+*.txt text
+*.docx binary
+*.pdf binary
