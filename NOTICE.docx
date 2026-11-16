@@ -1,0 +1,9 @@
+Apache-2.0
+Copyright 2026 autumntherain
+
+This project is an open-source reproduction and improvement implementation
+of classic deep learning papers, including AlexNet, Transformer, BERT, Adam,
+DQN, RLVR.
+
+Portions of this work reference original research papers and public open-source
+implementations, their respective licenses are retained where applicable.
