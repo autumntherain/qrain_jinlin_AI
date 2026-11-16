@@ -11,9 +11,6 @@
 |---|---|---|
 | 源码（Python / C++ / 脚本） | < 300 KB | git |
 | 论文 docx（中英各 6 篇） | ≈ 600 KB | git |
-| 教学演示图（压缩后） | 每张 25～40 KB，总量 ≤ 3 MB | git |
-| 架构图 | 用 SVG，每张 5～20 KB | git |
-| README 预览图 | WebP，每张 8～12 KB | git |
 | 预训练权重 | 0（仓库内） | GitHub Release |
 | 数据集 | 0（仓库内） | 下载脚本 / 网盘 |
 
@@ -25,9 +22,49 @@
 
 | 档位 | 用途 | 短边 | 质量 | 格式 |
 |---|---|---|---|---|
-| `doc` | 论文正文、Word 内嵌 | 512px | 80 | 保持 JPG/PNG（Word 不认 WebP） |
 | `web` | README、网页预览 | 336px | 75 | 无透明通道转 WebP |
 | `thumb` | 列表缩略图 | 224px | 72 | 转 WebP |
+
+> ⚠️ 插图说明：本项目论文文档不含原版图表，请参阅：
+[论文中无插图通告.md](./docs/论文中无插图通告.md)
+
+### 2.1 结论：仓库里一张图都不放
+
+三条理由，按重要性排：
+
+1. **版权零风险** —— 论文原图（AlexNet 属 NeurIPS 论文集、Nature 版 DQN 属 Springer Nature、arXiv 各篇为 arXiv 非独占分发许可）都不属于可公开再分发内容。一张不进来，问题直接消失，无需逐个判断许可。
+2. **不用自己画** —— 省掉整套架构图重绘（AlexNet 双 GPU 分支、Transformer 多头结构都很费时）。
+3. **体积归零** —— 原预算里 3 MB 的图片额度直接不存在。
+
+那 README 会不会太干？不会。用**文字 + 表格 + 代码块**描述结构；确需视觉对照时，给**指向原文的链接**（如 arXiv 页面），而不是把图本身放进来。
+
+### 2.2 配套声明文件 `ASSETS_POLICY.md`
+
+放在仓库根目录，内容如下：
+
+```text
+ASSETS POLICY
+
+This repository intentionally contains NO image assets.
+
+Rationale:
+1. Figures from the original papers (NeurIPS, Springer Nature, arXiv) are not
+   redistributable under our license. To avoid any copyright ambiguity, no
+   figures are included in this repository.
+2. This project distributes textual documentation and source code only.
+If you need to view the original figures, please refer to the official paper
+pages listed in README.md.
+
+Copyright 2026 autumntherain
+Licensed under the Apache License, Version 2.0.
+```
+
+README 里对应加一行：
+
+```markdown
+> 本仓库不含任何图片素材，原因与依据见 [ASSETS_POLICY.md](./ASSETS_POLICY.md)。
+> 论文原图请查阅 README 中给出的原文链接。
+```
 
 命令：
 
@@ -167,13 +204,13 @@ Shell / 配置：
 
 ### 5.7 文档与图片可以另用许可
 
-代码用 Apache 2.0，但论文译文、配图若想彻底放开，可单独声明 CC0 或 CC BY 4.0，写在 `docs/README.md` 里即可区分。**别把 CC0 套在代码上**，法律边界不如 Apache 清晰。
+代码采用 Apache 2.0；论文译文、阅读笔记文档如果需要，可单独声明 CC‑BY 4.0，写在`docs/README.md`，**不要将 CC0 应用于源代码**，写在 `docs/README.md` 里即可区分。**别把 CC0 套在代码上**，法律边界不如 Apache 清晰。
 
 ---
 
 ## 六、发布形态建议
 
-- **仓库**：源码 + 文档 + 压缩后演示图（≤ 10 MB）
+- **仓库**：源码 + 文档（无任何图片资源，≤10MB）
 - **Release**：`weights.zip`、`demo_data.zip`，附 SHA256
 - **运行时**：`python scripts/download_assets.py` 自动拉 Release 资源并校验哈希
 - 对外呈现为「轻仓库 + 按需下载」：clone 快，贡献者不会被大文件劝退
@@ -184,7 +221,8 @@ Shell / 配置：
 
 - [ ] `.gitignore` 已写好，`data/`、`*.pth`、`runs/` 已挡住
 - [ ] `.gitattributes` 已提交，图片标 binary
-- [ ] 图片跑过 `compress_assets.py`，`doc` 档用于文档、`web` 档用于 README
+- [ ] `ASSETS_POLICY.md` 已放置仓库根目录
+- [ ] `docs/论文中无插图通告.md` 已就位，README添加引用提示
 - [ ] `python tools/check_repo_size.py .` 返回 0
 - [ ] `LICENSE` 为 GitHub 生成的 Apache 2.0 全文，未改动
 - [ ] `NOTICE` 已写入年份 2026 与 `autumntherain`
