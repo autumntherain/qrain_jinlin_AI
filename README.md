@@ -9,7 +9,11 @@ AlexNet、Transformer、BERT、Adam、DQN、RLVR。
 - 增加中国国产AI数量与质量
 - 将代码开源，展示AI技术
 
-> ⚠️ 本仓库不含任何图片素材，原因与依据见 [ASSETS_POLICY.md](./ASSETS_POLICY.md)。
+> ⚠️ 本仓库图片素材较少，原因与依据见 [ASSETS_POLICY.md](./ASSETS_POLICY.md)。
+> ⚠️ 素材说明
+> 仓库附带作者原创手绘测试图片，用于图像模块调试，遵循Apache 2.0协议；
+> 素材体量小，仅用于代码链路验证与模型训练
+> 如需正式训练，请自行准备合规数据集。
 > 论文文档不含原版图表，请查阅 [docs/论文中无插图通告.md](./docs/论文中无插图通告.md)；原图请跳转各论文官方页面。
 
 ## Project structure
